@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 
-import Form from "./componets/Form";
-import Cita from "./componets/Cita";
+import Form from "./components/Form";
+import Cita from "./components/Cita";
 
 function App() {
   // listado de citas
