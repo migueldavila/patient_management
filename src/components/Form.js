@@ -1,5 +1,7 @@
 import React, { Fragment, useState } from "react";
 import uuid from "uuid/v4";
+// prop types
+import PropTypes from "prop-types";
 
 const Form = ({ createCita }) => {
   // crear state de citas
@@ -113,5 +115,9 @@ const Form = ({ createCita }) => {
     </Fragment>
   );
 };
+
+Form.propTypes = {
+  createCita: PropTypes.func.isRequired,
+}
 
 export default Form;

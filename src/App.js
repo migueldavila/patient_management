@@ -4,12 +4,24 @@ import Form from "./components/Form";
 import Cita from "./components/Cita";
 
 function App() {
+
+  // citas storage
+  let citasInit = JSON.parse(localStorage.getItem('citas'));
+  console.log(citasInit);
+  if(!citasInit){
+    citasInit = [];
+  }
   // listado de citas
-  const [citas, setCitas] = useState([]);
+  const [citas, setCitas] = useState(citasInit);
   // revisando cambios en state
   useEffect(() => {
-    console.log("citas state cambian");
-  }, [citas]);
+    console.log('efect')
+    if(citasInit){
+      localStorage.setItem('citas', JSON.stringify(citas));
+    }else{
+      localStorage.setItem('citas', JSON.stringify([]));
+    }
+  }, [citas, citasInit]);
 
   // funcion agregar citas
   const createCita = cita => {
